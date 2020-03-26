@@ -36,3 +36,13 @@ navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
 function handleError(error) {
   console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
 }
+
+function start() {
+  //const audioSource = audioInputSelect.value;
+  const videoSource = videoSelect.value;
+  console.log('video source :: ', videoSource);
+}
+
+videoSelect.onchange = start;
+
+start();
