@@ -1,9 +1,9 @@
 'use strict';
 
 const videoElement = document.querySelector('video');
-var audioInputSelect = document.querySelector('select#audioSource');
+const audioInputSelect = document.querySelector('select#audioSource');
 const audioOutputSelect = document.querySelector('select#audioOutput');
-var videoSelect = document.querySelector('select#videoSource');
+const videoSelect = document.querySelector('select#videoSource');
 const selectors = [audioInputSelect, audioOutputSelect, videoSelect];
 
 audioOutputSelect.disabled = !('sinkId' in HTMLMediaElement.prototype);
