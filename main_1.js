@@ -40,6 +40,7 @@ function handleError(error) {
 function start() {
   //const audioSource = audioInputSelect.value;
   const videoSource = videoSelect.value;
+  alert('video source :: ', videoSource);
   console.log('video source :: ', videoSource);
 }
 
