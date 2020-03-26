@@ -31,7 +31,21 @@ function gotDevices(deviceInfos) {
   });
 }
 
-navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
+function gotDevices_1(deviceInfos) {
+  window.deviceInfos = deviceInfos; // make available to console
+  console.log('Available input and output devices:', deviceInfos);
+  for (const deviceInfo of deviceInfos) {
+    const option = document.createElement('option');
+    option.value = deviceInfo.deviceId; 
+    if (deviceInfo.kind === 'videoinput') {
+      option.text = deviceInfo.label || `Camera ${videoSelect.length + 1}`;
+      videoSelect.appendChild(option);
+    }
+  }
+}
+
+//navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
+navigator.mediaDevices.enumerateDevices().then(gotDevices_1).catch(handleError);
 
 function handleError(error) {
   console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
@@ -40,8 +54,8 @@ function handleError(error) {
 function start() {
   //const audioSource = audioInputSelect.value;
   const videoSource = videoSelect.value;
-  alert('video source :: ', videoSource);
-  console.log('video source :: ', videoSource);
+  alert('video source :: ', videoSelect.value);
+  console.log('video source :: ', videoSelect.value);
 }
 
 videoSelect.onchange = start;
