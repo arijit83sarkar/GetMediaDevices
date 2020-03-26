@@ -4,11 +4,13 @@ var videoElement = document.querySelector('video');
 var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 
+//audioSelect.onchange = getStream;
+//videoSelect.onchange = getStream;
+//getStream().then(getDevices).then(gotDevices);
+
 audioSelect.onchange = getStream;
 videoSelect.onchange = getStream;
-
-//getStream().then(getDevices).then(gotDevices);
-getDevices().then(gotDevices);
+onPageLoad().then(getDevices).then(gotDevices);
 
 function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/
@@ -29,6 +31,10 @@ function gotDevices(deviceInfos) {
       videoSelect.appendChild(option);
     }
   }
+}
+
+function onPageLoad() {
+  console.error('onPageLoad() called.');
 }
 
 function getStream() {
