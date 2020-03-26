@@ -7,7 +7,8 @@ var videoSelect = document.querySelector('select#videoSource');
 audioSelect.onchange = getStream;
 videoSelect.onchange = getStream;
 
-getStream().then(getDevices).then(gotDevices);
+//getStream().then(getDevices).then(gotDevices);
+getDevices().then(gotDevices);
 
 function getDevices() {
   // AFAICT in Safari this only gets default devices until gUM is called :/
