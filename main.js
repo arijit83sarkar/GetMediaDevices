@@ -34,7 +34,7 @@ function gotDevices(deviceInfos) {
 }
 
 function onPageLoad() {
-  console.error('onPageLoad() called.');
+  console.log('onPageLoad() called.');
   return true;
 }
 
