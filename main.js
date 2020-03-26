@@ -35,6 +35,7 @@ function gotDevices(deviceInfos) {
 
 function onPageLoad() {
   console.error('onPageLoad() called.');
+  return true;
 }
 
 function getStream() {
