@@ -1,7 +1,7 @@
 # GetMediaDevices
 get all media devices (video camera and microphone) information.
 
-<br/><br/>
+
 # MediaDevices.getSupportedConstraints()
 <br/>
 https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getSupportedConstraints#Result
